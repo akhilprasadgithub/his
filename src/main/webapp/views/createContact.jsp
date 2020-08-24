@@ -13,7 +13,8 @@
 		<p><a href="viewAllContacts">View All Contacts</a></p>
 		<table>
 			<tr>
-				<td><form:hidden path="contactId" /></td>
+				<td><form:hidden path="contactId"/></td>
+				<td><form:hidden path="status"/></td>
 			</tr>
 			<tr>
 				<td>First Name :</td>

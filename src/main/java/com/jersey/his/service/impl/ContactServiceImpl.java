@@ -17,17 +17,17 @@ public class ContactServiceImpl implements ContactService {
 	private ContactRepository contactRepo;
 	
 	@Override
-	public ContactEntity insert(ContactDTO contactDTO) {
+	public boolean insert(ContactDTO contactDTO) {
 		ContactEntity contactEntity = new ContactEntity();
 		BeanUtils.copyProperties(contactDTO, contactEntity);
 		ContactEntity entity = contactRepo.save(contactEntity);
-		if(entity != null) return entity;
-		return null;
+		if(entity != null) return true;
+		return false;
 	}
 
 	@Override
-	public ContactEntity update(ContactDTO contactDTO) {
-		return null;
+	public boolean update(ContactDTO contactDTO) {
+		return false;
 	}
 
 	@Override
