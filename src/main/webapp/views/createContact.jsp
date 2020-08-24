@@ -10,30 +10,30 @@
 <body>
 	<form:form action="createContact" modelAttribute="contactDTO"
 		method="POST">
-		<p><a href="viewAllContacts">View All Contacts</p>
+		<p><a href="viewAllContacts">View All Contacts</a></p>
 		<table>
 			<tr>
 				<td><form:hidden path="contactId" /></td>
 			</tr>
 			<tr>
 				<td>First Name :</td>
-				<td><form:input path="contactName" /></td>
+				<td><form:input path="fname" /></td>
 			</tr>
 			<tr>
 				<td>Last Name :</td>
-				<td><form:input path="contactName" /></td>
+				<td><form:input path="lname" /></td>
 			</tr>
 			<tr>
 				<td>Email :</td>
-				<td><form:input path="contactEmail" /></td>
+				<td><form:input path="email" /></td>
 			</tr>
 			<tr>
 				<td>Gender :</td>
-				<td><form:input path="contactName" /></td>
+				<td><form:input path="gender" /></td>
 			</tr>
 			<tr>
 				<td>Role :</td>
-				<td><form:input path="contactName" /></td>
+				<td><form:input path="role" /></td>
 			</tr>
 			<tr>
 				<td><input type="reset" value="reset" /></td>

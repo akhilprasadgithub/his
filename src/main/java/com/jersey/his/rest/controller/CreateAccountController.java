@@ -14,6 +14,6 @@ public class CreateAccountController {
 	public String loadCreateContactForm(Model model) {
 		ContactDTO contactDTO = new ContactDTO();
 		model.addAttribute("contactDTO", contactDTO);
-		return "loadCreateContactForm";
+		return "createContact";
 	}
 }
