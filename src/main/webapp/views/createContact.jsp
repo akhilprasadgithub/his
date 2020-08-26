@@ -14,7 +14,6 @@
 		<table>
 			<tr>
 				<td><form:hidden path="contactId"/></td>
-				<td><form:hidden path="status"/></td>
 			</tr>
 			<tr>
 				<td>First Name :</td>
