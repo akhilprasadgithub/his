@@ -1,5 +1,7 @@
 package com.jersey.his.rest.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +38,12 @@ public class CreateAccountController {
 			attribute.addFlashAttribute("error", ReadProperties.message.get("insertFailed"));
 			return "redirect:/error";
 		}
-		
+	}
+	
+	@GetMapping(value={"/viewAllContacts"})
+	public String getAllContacts(Model model) {
+		List<ContactDTO> list = service.retrieveAll();
+		model.addAttribute("cdto", list);
+		return "viewContact";
 	}
 }

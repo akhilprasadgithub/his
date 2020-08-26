@@ -1,45 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script></script>
 </head>
 <body>
-	<form:form action="createContact" modelAttribute="createContact"
-		method="POST">
-		<p><a href="viewAllContacts">View All Contacts</a></p>
-		<table>
-			<tr>
-				<td><form:hidden path="contactId" /></td>
-			</tr>
-			<tr>
-				<td>First Name :</td>
-				<td><form:input path="fname" /></td>
-			</tr>
-			<tr>
-					<td>Last Name</td>
-					<td><form:input path="lname"/></td>
-			</tr>
-			<tr>
-				<td>Contact Email :</td>
-				<td><form:input path="email" /></td>
-			</tr>
-			<tr>
-				<td>Gender</td>
-				<td><form:input path="email" /></td>
-			</tr>
-			<tr>
-				<td>Role</td>
-				<td><form:input path="email" /></td>
-			</tr>
-			<tr>
-				<td><input type="reset" value="reset" /></td>
-				<td><input type="submit" value="submit" /></td>
-			</tr>
-		</table>
-	</form:form>
+	<p><a href="createContact">Create Contact</a></p>
+	<table border = "1px solid black">
+		<thead>
+			<td>Sr. No</td>
+			<td>Name</td>
+			<td>Email</td>
+			<td>Gender</td>
+			<td>Role</td>
+			<td>Actions</td>
+		</thead>
+		<tbody>
+			<c:forEach items="${cdto}" var="c" varStatus="index">
+				<tr>
+					<td>${index.count}</td>
+					<td><pre>${c.fname } ${c.lname }</pre></td>
+					<td>${c.email }</td>
+					<td>${c.gender }</td>
+					<td>${c.role }</td>
+					<td>
+						<a href="editContactById?contactId=${c.contactId }">Edit</a> || 
+						<a href="deleteContactById?contactId=${c.contactId }">Delete</a>
+					</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </body>
 </html>
